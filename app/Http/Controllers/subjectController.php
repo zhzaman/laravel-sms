@@ -6,6 +6,7 @@ use App\studentModel;
 use App\subjectModel;
 use Illuminate\Http\Request;
 use Validator;
+use Illuminate\Support\Facades\DB;
 class subjectController extends Controller
 {
     /**
@@ -26,8 +27,8 @@ class subjectController extends Controller
      */
     public function create()
     {
-       
-        return view('students.addsubject');
+       $teacher  = DB::table('teacher')->get();
+        return view('students.addsubject',compact('teacher'));
     }
 
     /**
