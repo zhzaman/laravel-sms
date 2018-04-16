@@ -24,8 +24,6 @@
             <option value="Nine">Nine</option>
             <option value="Ten">Ten</option>
           </select>
-
-
         @if($errors->has('class'))
             <span class="help-block" style="display:block">
           <strong>{{ $errors->first('class') }}</strong>
@@ -36,7 +34,7 @@
         <!-- {{ Form::label('teacherid','Techer') }}
         {{ Form::select('teacherid',[''=>'Select teacher','1'=>'Hasan','2'=>'Karim']) }} -->
          <label for="class">Teacher</label>
-        <select class="form-control" name="class">
+        <select class="form-control" name="teacherid">
             <option value="">Select Teacher</option>
             @foreach($teacher as $teacher)
             <option value="{{$teacher->id}}">{{$teacher->name}}</option>

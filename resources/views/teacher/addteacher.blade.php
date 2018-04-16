@@ -49,7 +49,7 @@
         @endif
     </div>
     <div class="form-group {{ $errors->has('gender') ? 'has_error':'' }}">
-        <label for="gender">Blood Group</label>
+        <label for="gender">Gender</label>
         <select name="gender" class="form-control">
             <option value="">Select Gender</option>
             <option value="Female">Female</option>

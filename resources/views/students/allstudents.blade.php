@@ -5,7 +5,7 @@
     <table class="table">
         <thead class="thead-dark">
         <tr>
-            <th scope="col">#</th>
+            <th scope="col">SL</th>
             <th scope="col">Name</th>
             <th scope="col">Phone</th>
             <th scope="col">Gender</th>

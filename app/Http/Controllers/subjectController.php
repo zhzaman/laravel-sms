@@ -16,8 +16,11 @@ class subjectController extends Controller
      */
     public function index()
     {
-        $subjectdata = subjectModel::get();
-        return view('students.allsubject',compact('subjectdata'));
+        //$subjectdata = subjectModel::get();
+        $teacher = DB::table('teacher')
+        ->join('subjects', 'subjects.teacherid', '=', 'teacher.id')
+        ->get();
+        return view('students.allsubject',compact('teacher'));
     }
 
     /**
@@ -74,7 +77,8 @@ class subjectController extends Controller
     public function edit($id)
     {
         $editdata = subjectModel::findOrFail($id);
-        return view('students.subjectedit',compact('editdata'));
+        $editteacher  = DB::table('teacher')->get();
+        return view('students.subjectedit',compact('editdata','editteacher'));
     }
 
     /**

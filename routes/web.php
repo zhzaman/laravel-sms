@@ -23,3 +23,4 @@ Route::get('/hasan', function () {
 Route::resource('/addstudent','studentController');
 Route::resource('/subject','subjectController');
 Route::resource('/teacher','teacherController');
+Route::resource('/admission','admissionController');

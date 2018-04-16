@@ -13,9 +13,10 @@
         </tr>
         </thead>
         <tbody>
+         <?php $i=1;?>
         @foreach($teacherData as $teacher)
         <tr>
-            <td scope="row">1</td>
+            <td scope="row">{{$i++}}</td>
             <td>{{ $teacher->name }}</td>
             <td>
                 {{--{{asset('public/public/files/$teacher->image')}--}}

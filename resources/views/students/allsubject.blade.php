@@ -17,12 +17,12 @@
     </thead>
     <tbody>
     <?php $i=1;?>
-    @foreach($subjectdata as $subject)
+    @foreach($teacher as $subject)
     <tr>
         <td>{{$i++}}</td>
         <td>{{$subject->subjectname}}</td>
         <td>{{$subject->class}}</td>
-        <td>{{$subject->teacherid}}</td>
+        <td>{{$subject->name}}</td>
         <td>{{$subject->fullmark}}</td>
         <td>
 
