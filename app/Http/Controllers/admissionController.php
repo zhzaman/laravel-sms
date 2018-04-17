@@ -13,7 +13,7 @@ class admissionController extends Controller
      */
     public function index()
     {
-         return view('admission.admission');
+//         return view('admission.admission');
     }
 
     /**
@@ -23,8 +23,7 @@ class admissionController extends Controller
      */
     public function create()
     {
-        //
-        return "admission";
+        return view('admission.admission');
     }
 
     /**

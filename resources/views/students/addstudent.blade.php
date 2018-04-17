@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('title','Add student')
 @section('content')
-    <h2 class="text-center mb-3">Add sudent info</h2>
+    <h2 class="text-center mb-3">Add student</h2>
     {!! Form::open(array('route'=>'addstudent.store', 'class'=>'' , 'files'=>true)) !!}
     <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
         {{ Form::label('name', 'Full Name') }}
@@ -34,27 +34,23 @@
         {{ Form::text('shift','',array('class'=>'form-control','placeholder'=>'Enter your shift')) }}
     </div>
 <div class="form-group">
-        {{ Form::label('studentid', 'studentid') }}
+        {{ Form::label('studentid', 'Studentid') }}
         {{ Form::text('studentid','',array('class'=>'form-control','placeholder'=>'Enter your studentid')) }}
     </div>
 <div class="form-group">
-        {{ Form::label('section', 'section') }}
+        {{ Form::label('section', 'Section') }}
         {{ Form::text('section','',array('class'=>'form-control','placeholder'=>'Enter your section')) }}
     </div>
-<div class="form-group">
-        {{ Form::label('shift', 'Shift') }}
-        {{ Form::text('shift','',array('class'=>'form-control','placeholder'=>'Enter your shift')) }}
-    </div>
     <div class="form-group">
-        {{ Form::label('fathername', 'fathername') }}
+        {{ Form::label('fathername', 'Fathername') }}
         {{ Form::text('fathername','',array('class'=>'form-control','placeholder'=>'Enter your fathername')) }}
     </div>
     <div class="form-group">
-        {{ Form::label('mothername', 'mothername') }}
+        {{ Form::label('mothername', 'Mothername') }}
         {{ Form::text('mothername','',array('class'=>'form-control','placeholder'=>'Enter your mothername')) }}
     </div>
     <div class="form-group">
-        {{ Form::label('datofbirth', 'datofbirth') }}
+        {{ Form::label('datofbirth', 'Datofbirth') }}
         {{ Form::date('datofbirth','',array('class'=>'form-control','placeholder'=>'Enter your datofbirth')) }}
     </div>
     <div class="form-group">
@@ -66,12 +62,12 @@
         {{ Form::select('gender',['F'=>'Female','M'=>'Male']) }}
     </div>
     <div class="form-group">
-        {{ Form::label('address', 'address') }}
+        {{ Form::label('address', 'Address') }}
         {{ Form::textarea('address','',array('class'=>'form-control','placeholder'=>'Enter your address')) }}
     </div>
 
        <div class="form-group">
-        {{ Form::label('bloodgroup', 'bloodgroup') }}
+        {{ Form::label('bloodgroup', 'Bloodgroup') }}
         {{ Form::text('bloodgroup','',array('class'=>'form-control','placeholder'=>'Enter your bloodgroup')) }}
     </div>
 
@@ -82,13 +78,13 @@
     </div>
 
        <div class="form-group">
-        {{ Form::label('nidofguardian', 'nidofguardian') }}
+        {{ Form::label('nidofguardian', 'Nid of guardian') }}
         {{ Form::text('nidofguardian','',array('class'=>'form-control','placeholder'=>'Enter your nidofguardian')) }}
     </div>
 
        <div class="form-group">
-        {{ Form::label('guardian', 'guardian') }}
-        {{ Form::text('guardian','',array('class'=>'form-control','placeholder'=>'Enter your guardian')) }}
+        {{ Form::label('guardian', 'Guardian Name') }}
+        {{ Form::text('guardian','',array('class'=>'form-control','placeholder'=>'Enter your guardian Name')) }}
     </div>
 
 

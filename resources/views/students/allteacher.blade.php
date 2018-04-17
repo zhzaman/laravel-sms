@@ -3,6 +3,7 @@
 @section('content')
 
     <table class="table table-bordered">
+
         <thead>
         <tr>
             <th scope="col">SL</th>

@@ -79,7 +79,7 @@
             @endif
         </div>
         <div class="form-group {{ $errors->has('gender') ? 'has_error':'' }}">
-            <label for="gender">Blood Group</label>
+            <label for="gender">Gender</label>
             <select name="gender" class="form-control">
                 <option value="">Select Gender</option>
                 <option value="Female">Female</option>
@@ -92,7 +92,7 @@
             @endif
         </div>
         <div class="form-group {{ $errors->has('address') ? 'has_error' : '' }}">
-            {{ Form::label('address','address') }}
+            {{ Form::label('address','Address') }}
             {{ Form::textarea('address','',array('class'=>'form-control') ) }}
             @if($errors->has('address'))
                 <span class="help-block" style="display: block">
@@ -130,8 +130,42 @@
            </span>
             @endif
         </div>
-
-
+        <div class="form-group {{ $errors->has('nidofguardian') ? 'has_error' : '' }}">
+            {{ Form::label('nidofguardian','Nid of Guardian') }}
+            {{ Form::text('nidofguardian','',array('class'=>'form-control','placeholder'=>'Enter your Guardian nid number') ) }}
+            @if($errors->has('nidofguardian'))
+                <span class="help-block" style="display:block">
+          <strong>{{ $errors->first('nidofguardian') }}</strong>
+            </span>
+            @endif
+        </div>
+        <div class="form-group {{ $errors->has('preschool') ? 'has_error' : '' }}">
+            {{ Form::label('preschool','Pre School') }}
+            {{ Form::text('preschool','',array('class'=>'form-control','placeholder'=>'Enter your Pre school Name') ) }}
+            @if($errors->has('preschool'))
+                <span class="help-block" style="display:block">
+          <strong>{{ $errors->first('preschool') }}</strong>
+            </span>
+            @endif
+        </div>
+        <div class="form-group {{ $errors->has('guardianname') ? 'has_error' : '' }}">
+            {{ Form::label('guardianname','Guradian Name') }}
+            {{ Form::text('guardianname','',array('class'=>'form-control','placeholder'=>'Enter your Guradian Name') ) }}
+            @if($errors->has('guardianname'))
+                <span class="help-block" style="display:block">
+          <strong>{{ $errors->first('guardianname') }}</strong>
+            </span>
+            @endif
+        </div>
+        <div class="form-group  {{ $errors->has('image') ? 'has_error' : '' }}">
+            {{ Form::label('image', 'Profile Image', array('class'=>'control-label'))}}
+            {{ Form::file('image', array('class'=>'col-md-6 form-control'))}}
+            @if($errors->has('image'))
+                <span class="help-block" style="display:block">
+          <strong>{{ $errors->first('image') }}</strong>
+            </span>
+            @endif
+        </div>
 
         {{ Form::submit('Admission',array('class'=>'btn btn-primary mt-3')) }}
         {!! Form::close() !!}

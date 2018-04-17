@@ -5,6 +5,7 @@
     <table class="table">
         <thead class="thead-dark">
         <tr>
+            <th scope="col">#</th>
             <th scope="col">SL</th>
             <th scope="col">Name</th>
             <th scope="col">Phone</th>
@@ -17,13 +18,13 @@
         <?php $i=1; ?>
         @foreach($allstudentdata as $student)
             <tr>
+                <td>
+                    <a href="{{route('addstudent.edit',$student->id)}}" class="btn-sm btn-primary">Edit</a>
+                </td>
                 <td>{{$i++}}</td>
                 <td>{{$student->name}}</td>
                 <td>{{$student->phone}}</td>
                 <td>{{$student->gender}}</td>
-                <td>
-                    <a href="{{route('addstudent.edit',$student->id)}}" class="btn-sm btn-primary">Edit</a>
-                </td>
                 <td>
                     {!! Form::open(array('route' => ["addstudent.destroy",$student->id],'method'=>'DELETE')) !!}
                     <button class="btn-sm btn-danger">Delete</button>
