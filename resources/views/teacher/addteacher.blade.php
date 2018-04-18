@@ -2,6 +2,21 @@
 @section('title','Add teacher')
 @section('content')
     <h2 class="text-center mb-3">Add Teacher</h2>
+    @if(Session::has('msg'))
+        <div class="col-md-12">
+            <div class="alert alert-success alert-dismissable">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <b>{!! Session::get('msg')!!}</b>
+            </div>
+        </div>
+    @elseif(Session::has('smgerror'))
+        <div class="col-md-12">
+            <div class="alert alert-danger alert-dismissable">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <b>{!! Session::get('smgerror')!!}</b>
+            </div>
+        </div>
+    @endif
 {!! Form::open(array('route'=>'teacher.store','class'=>'','files'=>true)) !!}
     <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
         {{ Form::label('name', 'Full Name') }}

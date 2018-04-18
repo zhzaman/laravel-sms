@@ -44,6 +44,7 @@
         <div id="page-wrapper">
             <div class="container-fluid">
                 <div class="row">
+
                     @if(Session::has('success'))
                         <div class="col-md-12">
                             <div class="alert alert-success alert-dismissable">
@@ -59,6 +60,7 @@
                             </div>
                         </div>
                     @endif
+
                     <div class="col-lg-12">
                         
                         @yield('content')

@@ -16,6 +16,23 @@
 <div class="col-lg-2"></div>
     <div class="col-lg-8">
         <h2 class="text-center mb-3 mt-3">Student Admission</h2>
+
+        @if(Session::has('msg'))
+            <div class="col-md-12">
+                <div class="alert alert-success alert-dismissable">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <b>{!! Session::get('msg')!!}</b>
+                </div>
+            </div>
+        @elseif(Session::has('msgerror'))
+            <div class="col-md-12">
+                <div class="alert alert-danger alert-dismissable">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <b>{!! Session::get('msgerror')!!}</b>
+                </div>
+            </div>
+        @endif
+
         {!! Form::open(array('route'=>'admission.store','class'=>'','files'=>true)) !!}
         <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
             {{ Form::label('name', 'Full Name') }}
@@ -35,12 +52,12 @@
             </span>
             @endif
         </div>
-        <div class="form-group {{ $errors->has('mathername') ? 'has-error' : '' }}">
-            {{ Form::label('mathername', 'Mother Name') }}
-            {{ Form::text('mathername','',array('class'=>'form-control','placeholder'=>'Enter your mother name')) }}
-            @if($errors->has('mathername'))
+        <div class="form-group {{ $errors->has('mothername') ? 'has-error' : '' }}">
+            {{ Form::label('mothername', 'Mother Name') }}
+            {{ Form::text('mothername','',array('class'=>'form-control','placeholder'=>'Enter your mother name')) }}
+            @if($errors->has('mothername'))
                 <span class="help-block" style="display:block">
-          <strong>{{ $errors->first('mathername') }}</strong>
+          <strong>{{ $errors->first('mothername') }}</strong>
             </span>
             @endif
         </div>
